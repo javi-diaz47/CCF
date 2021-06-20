@@ -1,0 +1,89 @@
+:root{
+    --primary-color: #52abea; 
+    --secondary-color: #1e2022;
+    --bg-color: #f1f5f8;
+    --white: #ffffff;
+    --font: "Mononoki NF";
+}
+
+.btn{
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 10px;
+    transition: .3s;
+    font-family: var(--font);
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: var(--font);
+    background-color: var(--bg-color);
+}
+
+/* 
+#####################################################
+########$$$$$$$       HEADER      $$$$$$$$$$$$$$$$$##
+##################################################### 
+*/
+
+.header{
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar{
+    width: 60%;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: .7fr .3fr;
+    gap: 1em;
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.nav-li-btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav-title{
+    margin: 0;
+}
+
+.nav-btn{
+    width: 80px;
+    color: var(--white);
+    font-weight: light;
+    border: 0;
+}
+
+.nav-btn:hover{
+    color: var(--primary-color);
+}
+
+
+/* 
+#####################################################
+########$$$$$$$       COUNTER      $$$$$$$$$$$$$$$$$#
+##################################################### 
+*/
+
+
+
+/* 
+#####################################################
+##########$$$$$$$       CARD      $$$$$$$$$$$$$$$$$##
+##################################################### 
+*/
+
