@@ -169,10 +169,20 @@ body{
 }
 
 .card{
-
+    height: 60px;
+    background-color: var(--secondary-color);
+    display: flex;    
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
 
 }
 
 .card-title{
     margin: 0;
+}
+
+#card-color{
+    color: var(--primary-color);
+    transition: .3s;
 }
