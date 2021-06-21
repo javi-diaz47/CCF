@@ -1,7 +1,9 @@
 :root{
     --primary-color: #52abea; 
-    --secondary-color: #1e2022;
-    --bg-color: #f1f5f8;
+    --secondary-color: #181a1b;
+    --bg-color: #1e2022;
+    --positive: #72ff72;
+    --negative: #ff1a1a;
     --white: #ffffff;
     --font: "Mononoki NF";
 }
@@ -12,13 +14,29 @@
     padding: 5px 10px;
     transition: .3s;
     font-family: var(--font);
+    color: white;
+}
+
+.active-number{
+    min-width: 20%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.positive{
+    color: var(--positive);
+}
+
+.negative{
+    color: var(--negative);
 }
 
 body{
     margin: 0;
-    height: 100vh;
     font-family: var(--font);
     background-color: var(--bg-color);
+    color: white;
 }
 
 /* 
@@ -28,10 +46,11 @@ body{
 */
 
 .header{
-    width: 100%;
-    padding: 20px 0;
+    height: 60px; 
+    /* padding: 20px 0; */
     background-color: var(--secondary-color);
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -66,9 +85,18 @@ body{
     color: var(--white);
     font-weight: light;
     border: 0;
+    background-color: transparent;
 }
 
 .nav-btn:hover{
+    color: var(--primary-color);
+}
+
+.nav-btn:active{
+    color: white;
+}
+
+.nav-active-btn{
     color: var(--primary-color);
 }
 
@@ -79,7 +107,56 @@ body{
 ##################################################### 
 */
 
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    background-color: var(--bg-color);
+}
 
+.grid{
+    width: 80%;
+    height: 80%;
+    displaY: grid;
+    grid-template: 0.7fr 0.3fr/ 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.counter{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.counter-title{
+    margin: 0;
+    font-size: 4em;
+}
+
+.counter-number{
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 40px;
+    transition: .3s;
+}
+
+.counter-btn{
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.counter-btn:hover{
+    background-color: var(--primary-color);
+}
+
+.counter-btn:active{
+    background-color: white;
+    border: 0 solid transparent;
+}
 
 /* 
 #####################################################
@@ -87,3 +164,15 @@ body{
 ##################################################### 
 */
 
+.wrapper-card{
+
+}
+
+.card{
+
+
+}
+
+.card-title{
+    margin: 0;
+}

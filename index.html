@@ -15,28 +15,30 @@
                     <h3 id="nav-title">CounterColorFlipper</h3>
                 </li>
                 <li class="nav-li-btns">
-                    <button class="btn nav-btn">Simple</button>
+                    <button class="nav-active-btn btn nav-btn">Simple</button>
                     <button class="btn nav-btn">Hex</button>
                 </li>
             </ul>
         </nav>
     </header>
-    <section class="grid">
-        <article class="counter">
-            <h1>Counter: </h1>
-            <span id="counter-number"></span>
-            <div class="counter-btns">
-                <button id="decrease-btn" class="btn">Decrease</button>
-                <button id="reset-btn" class="btn">Reset</button>
-                <button id="increase-btn" class="btn">Increase</button>
-            </div>
-        </article>
-        <article class="wrapper-card">
-            <div class="card">
-                <h2>Background Color: </h2>
-                <span id="span-color"></span>
-            </div>
-        </article>
+    <section class="main">
+        <div class="grid">
+            <article class="counter">
+                <h1 class="counter-title">Counter: </h1>
+                <span class="counter-number">0</span>
+                <div class="counter-btns">
+                    <button id="decrease-btn" class="btn counter-btn">Decrease</button>
+                    <button id="reset-btn" class="btn counter-btn"">Reset</button>
+                    <button id="increase-btn" class="btn counter-btn"">Increase</button>
+                </div>
+            </article>
+            <article class="wrapper-card">
+                <div class="card">
+                    <h2 class="card-title">Background Color: </h2>
+                    <span id="span-color"></span>
+                </div>
+            </article>
+        </div>
     </section>
 </body>
 </html>
