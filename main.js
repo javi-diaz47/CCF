@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Hello World!");
-
     let currentNumber = 0;
 
     // COUNTER
@@ -16,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const decreaseBtn = document.querySelector('#decrease-btn');
     decreaseBtn.onclick = () => decreaseCounter();
 
-    
+
     //Increase counter
     const increaseCounter = () => {
         currentNumber++;
