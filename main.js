@@ -2,17 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentNumber = 0;
 
     // COUNTER
-    const counterNumber = document.querySelector('#counter-number');
+    const $counter = document.querySelector('#counter');
+    const $counterNumber = document.querySelector('#counter-number');
 
     // COUNTER BUTTONS
-    const resetBtn = document.querySelector('#reset-btn');
-    resetBtn.onclick = () => resetCounter();
+    const $resetBtn = document.querySelector('#reset-btn');
+    $resetBtn.onclick = () => resetCounter();
     
-    const increaseBtn = document.querySelector('#increase-btn');
-    increaseBtn.onclick = () => increaseCounter();
+    const $increaseBtn = document.querySelector('#increase-btn');
+    $increaseBtn.onclick = () => increaseCounter();
     
-    const decreaseBtn = document.querySelector('#decrease-btn');
-    decreaseBtn.onclick = () => decreaseCounter();
+    const $decreaseBtn = document.querySelector('#decrease-btn');
+    $decreaseBtn.onclick = () => decreaseCounter();
 
 
     //Increase counter
@@ -34,24 +35,70 @@ document.addEventListener('DOMContentLoaded', () => {
         setCounterNumber(currentNumber);
     }
 
-
-
     // Set the current number in the DOM
     const setCounterNumber = (number) => {
         setCounterNumberColor(number);
-        counterNumber.textContent = number;
+        console.log(number);
+        $counterNumber.textContent = number;
     }
 
     const setCounterNumberColor = (number) => {
 
         if(number > 0){
-            counterNumber.classList = 'positive active-number counter-number';
+            $counter.classList.add('active-counter');
+            $counterNumber.classList = 'positive counter-number';
         }else if(number == 0){
-            counterNumber.classList = 'counter-number'
+            $counter.classList.remove('active-counter');
+            $counterNumber.classList = 'counter-number'
         }else{
-            counterNumber.classList = 'negative active-number counter-number';
+            $counter.classList.add('active-counter');
+            $counterNumber.classList = 'negative active-number counter-number';
         }
 
+        setBackgroundColor(number);
+
+   }
+
+    // Card Color
+    const $main = document.querySelector('#main');
+    const $cardColor = document.querySelector('#card-color');
+    const MAX_COLOR = 16777215;
+    const randomColor =  () => (Math.round(Math.random()*(MAX_COLOR))).toString(16);
+
+
+    const $simpleBtn = document.querySelector('#simple-btn')
+    $simpleBtn.onclick = () => navActiveBtn();
+
+    const $hexBtn = document.querySelector('#hex-btn')
+    $hexBtn.onclick = () => navActiveBtn();
+
+    const navActiveBtn = () => {
+        $simpleBtn.classList.toggle('nav-active-btn');
+        $hexBtn.classList.toggle('nav-active-btn');
     }
+
+
+    const setBackgroundColor = (number) => {
+
+        if(number == 0){
+            $main.style.backgroundColor = '#1e2022';
+            $cardColor.textContent = '#1e2022';
+  
+        }else{
+
+            if($simpleBtn.classList.contains('nav-active-btn')){
+
+            }else{
+                let color = "#" + randomColor();
+                $main.style.backgroundColor = color;
+                $cardColor.textContent = color;
+
+            }
+
+        }
+
+ 
+    }
+
     
 });

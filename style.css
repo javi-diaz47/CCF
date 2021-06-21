@@ -17,11 +17,13 @@
     color: white;
 }
 
-.active-number{
-    min-width: 20%;
+.active-counter{
+    /* min-width: 20%; */
     background-color: var(--secondary-color);
+    /* border-radius: 5px; */
+    /* margin-top: 10px; */
+    padding: 20px 60px;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .positive{
