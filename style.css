@@ -22,7 +22,7 @@
     background-color: var(--secondary-color);
     /* border-radius: 5px; */
     /* margin-top: 10px; */
-    padding: 20px 60px;
+    padding: 20px ;
     border-radius: 5px;
 }
 
@@ -131,6 +131,8 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 60%;
+    max-width: 380px;
 }
 
 .counter-title{
@@ -166,14 +168,18 @@ body{
 ##################################################### 
 */
 
-/* .wrapper-card{
-
-} */
+.wrapper-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .card{
+    width: 60%;
     height: 60px;
     background-color: var(--secondary-color);
     display: flex;    
+    justify-content: center;
     align-items: center;
     padding: 0 10px;
     border-radius: 5px;
@@ -182,6 +188,7 @@ body{
 
 .card-title{
     margin: 0;
+    text-transform: uppercase;
 }
 
 #card-color{

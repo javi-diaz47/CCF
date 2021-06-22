@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const increaseCounter = () => {
         currentNumber++;
         setCounterNumber(currentNumber);
-        console.log('increased');
     }
 
     //Reset counter 
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set the current number in the DOM
     const setCounterNumber = (number) => {
         setCounterNumberColor(number);
-        console.log(number);
         $counterNumber.textContent = number;
     }
 
@@ -63,20 +61,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const $main = document.querySelector('#main');
     const $cardColor = document.querySelector('#card-color');
     const MAX_COLOR = 16777215;
+    
+    //simple
+    let currentColor = 0; 
+    const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+   
+    const $simpleBtn = document.querySelector('#simple-btn')
+    $simpleBtn.onclick = () => navActiveBtn($simpleBtn, $hexBtn, 'nav-active-btn');
+ 
+    //hex
     const randomColor =  () => (Math.round(Math.random()*(MAX_COLOR))).toString(16);
 
-
-    const $simpleBtn = document.querySelector('#simple-btn')
-    $simpleBtn.onclick = () => navActiveBtn();
-
     const $hexBtn = document.querySelector('#hex-btn')
-    $hexBtn.onclick = () => navActiveBtn();
+    $hexBtn.onclick = () => navActiveBtn($hexBtn, $simpleBtn, 'nav-active-btn');
 
-    const navActiveBtn = () => {
-        $simpleBtn.classList.toggle('nav-active-btn');
-        $hexBtn.classList.toggle('nav-active-btn');
+    const navActiveBtn = (activeNode, deactiveNode, className) => {
+
+        if(!activeNode.classList.contains('nav-active-btn')){
+            activeNode.classList.add(className);
+            deactiveNode.classList.remove(className);
+        }
+
     }
-
 
     const setBackgroundColor = (number) => {
 
@@ -87,6 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }else{
 
             if($simpleBtn.classList.contains('nav-active-btn')){
+                if(currentColor > colors.length-1) currentColor = 0;
+                $main.style.backgroundColor = colors[currentColor];
+                $cardColor.textContent = colors[currentColor++];
+  
 
             }else{
                 let color = "#" + randomColor();
